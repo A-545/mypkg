@@ -10,7 +10,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-
+      - name: Install python3
+        run: |
+        apt-get update
+        apt-get install -y python3 python3-pip
       - name: build and test
         run: |
            rsync -av ./ /root/ros2_ws/src/mypkg/
