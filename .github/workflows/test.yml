@@ -6,20 +6,20 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Fix ROS 2 APT GPG key issue (full reset)
+      - name: Fix ROS2 GPG Key
         run: |
-          apt-get clean
-          rm -f /etc/apt/sources.list.d/ros2-latest.list
-          rm -f /usr/share/keyrings/ros-archive-keyring.gpg
-          curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
-            -o /usr/share/keyrings/ros-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
-            http://packages.ros.org/ros2/ubuntu $(lsb_release -sc) main" \
-            > /etc/apt/sources.list.d/ros2-latest.list
-          apt-get update
+          apt-get update || true
+          apt-get install -y curl gnupg2
+          curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | apt-key add -
+
       - name: Install python3 in container
         run: |
+          apt-get update
           apt-get install -y python3 python3-pip python3-venv
+      - name: Verify python3 installation
+        run: |
+          which python3
+          python3 --version
       - name: build and test
         run: |
            rsync -av ./ /root/ros2_ws/src/mypkg/
