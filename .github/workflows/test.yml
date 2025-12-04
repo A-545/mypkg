@@ -6,10 +6,10 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
+      - name: Install python3 in container
+        run: |
+          apt-get update
+          apt-get install -y python3 python3-pip python3-venv
       - name: build and test
         run: |
            rsync -av ./ /root/ros2_ws/src/mypkg/
