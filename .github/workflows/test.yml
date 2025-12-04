@@ -6,9 +6,19 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v2
+        # --- ROS 2 GPG キー問題の修正 ---
+      - name: Fix ROS 2 APT GPG key issue
+        run: |
+          apt-get update || true
+          rm -f /etc/apt/sources.list.d/ros2-latest.list
+          curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+            -o /usr/share/keyrings/ros-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+            http://packages.ros.org/ros2/ubuntu $(lsb_release -sc) main" \
+            > /etc/apt/sources.list.d/ros2-latest.list
+          apt-get update
       - name: Install python3 in container
         run: |
-          apt-get update
           apt-get install -y python3 python3-pip python3-venv
       - name: build and test
         run: |
