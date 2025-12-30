@@ -8,7 +8,6 @@ ROS2 上で動作するポモドーロタイマーです。
 ## クローン方法
 ```
 $git clone https://github.com/A-545/mypkg ~/ros2_ws/src/mypkg
-$cd mypkg
 ```
 
 ## 実行例
