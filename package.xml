@@ -3,7 +3,7 @@
 <package format="3">
   <name>mypkg</name>
   <version>0.0.0</version>
-  <description>ロボットシステム学のやつ</description>
+  <description>ロボットシステム学課題2</description>
   <maintainer email="aaa@gmail.com">Kotaro Oshima</maintainer>
   <license>BSD-3-Clause</license>
   <exec_depend>rclpy</exec_depend>         
