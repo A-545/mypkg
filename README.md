@@ -1,4 +1,4 @@
-# mypkg -3.13.5 Pomodoro Timer ROS2 Package
+# mypkg - Pomodoro Timer ROS2 Package
 ![test](https://github.com/A-545/robosys2025/actions/workflows/test.yml/badge.svg)
 
 ## 概要
