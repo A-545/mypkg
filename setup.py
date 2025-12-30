@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Kotaro Oshima 
+# SPDX-License-Identifier: BSD-3-Clause
+
 from setuptools import find_packages, setup
 import os
 from glob import glob
@@ -17,7 +20,7 @@ setup(
     zip_safe=True,
     maintainer='Kotaro Oshima',
     maintainer_email='aaa@gmail.com',
-    description='ロボットシステム学のやつ',
+    description='ロボットシステム学課題２',
     license='BSD-3-Clause',
     extras_require={
         'test': [
@@ -26,8 +29,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main', #talker.pyのmain関数という意味
-            'listener = mypkg.listener:main',
+            'timer_node = mypkg.timer_node:main',
+            'notifier_node = mypkg.notifier_node:main',
         ],
     },
 )
