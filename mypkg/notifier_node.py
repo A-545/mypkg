@@ -45,6 +45,7 @@ class PomodoroNotifier(Node):
 def main():
     rclpy.init()
     node = PomodoroNotifier()
+    rclpy.spin_once(node, timeout_sec=0.5)
     rclpy.spin(node)
 
 if __name__ == '__main__':
