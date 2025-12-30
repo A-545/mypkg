@@ -6,7 +6,10 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v2
-
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Fix ROS2 GPG Key
         run: |
           apt-get update
@@ -15,7 +18,11 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
           echo "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2.list
           apt-get update
-
+      - name: Install ROS 2
+        run: |
+          apt-get update
+          apt-get install -y ros-humble-desktop
+          echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
       - name: Install python3 in container
         run: |
           apt-get install -y python3 python3-pip python3-venv
@@ -29,4 +36,5 @@ jobs:
         run: |
           rsync -av ./ /root/ros2_ws/src/mypkg/
           cd /root/ros2_ws
+          source /opt/ros/humble/setup.bash
           bash -xv ./src/mypkg/test/test.bash /root
