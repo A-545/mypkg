@@ -1,4 +1,5 @@
-# mypkg - Pomodoro Timer ROS2 Package
+# mypkg -3.13.5 Pomodoro Timer ROS2 Package
+![test](https://github.com/A-545/robosys2025/actions/workflows/test.yml/badge.svg)
 
 ## 概要
 ROS2 上で動作するポモドーロタイマーです。  
@@ -22,12 +23,13 @@ $ros2 launch mypkg timer_notifier.launch.py
 [notifier_node-2] [INFO] [1767123091.443460805] [pomodoro_notifier]: Time left: 24:57
 [notifier_node-2] [INFO] [1767123092.440687042] [pomodoro_notifier]: Time left: 24:56
 [notifier_node-2] [INFO] [1767123093.439053978] [pomodoro_notifier]: Time left: 24:55
+...
+[notifier_node-2] [WARN] [pomodoro_notifier]: Time for a break. Rest for 5 mins.
 ```
 
 ## 動作環境
 ### ソフトウェア
-- Python
-    - 3.7 ~ 3.10 テスト済み
+- Python 3.13.5テスト済み
 ### テスト環境
 - Ubuntu 24.04.3 動作確認済み
 
