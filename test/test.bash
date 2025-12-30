@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Kotaro Oshima
 # SPDX-License-Identifier: BSD-3-Clause
 
+source /opt/ros/humble/setup.bash
 dir=~
 [ "$1" != "" ] && dir="$1"
 
