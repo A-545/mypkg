@@ -4,6 +4,7 @@
 ## 概要
 ROS2 上で動作するポモドーロタイマーです。  
 
+25分間カウントした後、5分の休憩時間がありカウントを繰り返します
 ## クローン方法
 ```
 $git clone https://github.com/A-545/mypkg ~/ros2_ws/src/mypkg
