@@ -39,13 +39,16 @@ ROS2 上で動作するポモドーロタイマーです。
 
 ## クローン方法
 ```
-$git clone https://github.com/A-545/mypkg ~/ros2_ws/src/mypkg
+# 任意の ROS2 ワークスペースへ移動
+$ cd <your_ros2_ws>/src
+# クローン
+$ git clone https://github.com/A-545/mypkg.git
 ```
 
 ## 実行例
 ```
-# 任意の場所でクローンした ROS2 ワークスペースへ移動
-$ cd <your_ros2_ws>/src
+# 任意のROS2 ワークスペースへ移動
+$ cd <your_ros2_ws>
 $ colcon build
 $ source install/setup.bash
 # ノードを起動
