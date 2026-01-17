@@ -47,7 +47,7 @@ $ git clone https://github.com/A-545/mypkg.git
 
 ## 実行例
 ```
-# 任意のROS2 ワークスペースへ移動
+# 任意の ROS2 ワークスペースへ移動
 $ cd <your_ros2_ws>
 $ colcon build
 $ source install/setup.bash
@@ -65,7 +65,7 @@ $ ros2 launch mypkg timer_notifier.launch.py
 
 ## 動作環境
 ### ソフトウェア
-- Python 3.13.5テスト済み
+- Python 3.13.5 テスト済み
 ### テスト環境
 - Ubuntu 24.04.3 動作確認済み
 
