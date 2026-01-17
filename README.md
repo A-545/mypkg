@@ -39,9 +39,7 @@ ROS2 上で動作するポモドーロタイマーです。
 
 ## クローン方法
 ```
-# 任意の ROS2 ワークスペースへ移動
-$ cd <your_ros2_ws>/src
-# クローン
+# 任意の ROS2 ワークスペースの src ディレクトリにクローン
 $ git clone https://github.com/A-545/mypkg.git
 ```
 
