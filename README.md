@@ -1,5 +1,5 @@
 # mypkg - Pomodoro Timer ROS2 Package
-![test](https://github.com/A-545/robosys2025/actions/workflows/test.yml/badge.svg)
+[![test](https://github.com/A-545/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/A-545/mypkg/actions/workflows/test.yml)
 
 ## 概要
 ROS2 上で動作するポモドーロタイマーです。  
@@ -53,11 +53,12 @@ $git clone https://github.com/A-545/mypkg ~/ros2_ws/src/mypkg
 
 ## 実行例
 ```
-$cd ~/ros2_ws
-$colcon build
-$source install/setup.bash
+# 任意の場所でクローンした ROS2 ワークスペースへ移動
+$ cd <your_ros2_ws>/src
+$ colcon build
+$ source install/setup.bash
 # ノードを起動
-$ros2 launch mypkg timer_notifier.launch.py
+$ ros2 launch mypkg timer_notifier.launch.py
 [notifier_node-2] [INFO] [1767123089.467671444] [pomodoro_notifier]: Work Time. Focus for 25 mins.
 [notifier_node-2] [INFO] [1767123089.468561270] [pomodoro_notifier]: Time left: 24:59
 [notifier_node-2] [INFO] [1767123090.445315854] [pomodoro_notifier]: Time left: 24:58
