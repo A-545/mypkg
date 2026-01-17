@@ -13,14 +13,11 @@ ROS2 上で動作するポモドーロタイマーです。
 - 1秒ごとにカウントダウンを実行し、残り時間が 0 になると FOCUS↔BREAK を切り替える  
 - 現在状態と残り時間をトピックとして配信する  
 
----
-
 ### **notifier_node.py**（ノード名：`/pomodoro_notifier`）
 - `timer_node.py`（`/pomodoro_timer`）のトピックを購読して動作  
 - 状態が変わった瞬間に INFO/WARN でメッセージを表示  
 - 残り時間を mm:ss 形式でログに出力する通知ノード  
 
----
 ## トピック一覧  
 ### **/pomodoro_timer/state**
 - **型：** `std_msgs/msg/String`  
@@ -30,21 +27,15 @@ ROS2 上で動作するポモドーロタイマーです。
   - `"FOCUS"`（作業時間）  
   - `"BREAK"`（休憩時間）  
 
----
-
 ### **/pomodoro_timer/time_remaining**
 - **型：** `std_msgs/msg/Int32`  
 - **配信元：** `/pomodoro_timer`  
 - **購読者：** `/pomodoro_notifier`  
 - **内容：** 残り時間（秒）を整数値で通知  
 
----
-
 ### その他のシステムトピック
 **/parameter_events** ノードのパラメータ変更通知（標準） 
 **/rosout** ログ出力（標準） 
-
----
 
 ## クローン方法
 ```
